@@ -1,0 +1,23 @@
+<!doctype html>  
+<head>
+  <title>{{title}}</title>
+  <link rel="Lenna" href="/static/Lenna.png">
+</head>
+<body>
+    <header>
+        <h1>Hello {{title}}, I can't see you...</h1>
+    </header>
+    aiohttp_jinja2 is able to render the <b>index.jinja2</b> template, filling in the name "Lenna" in all the right places, but I can not access the local <b>Lenna.png</b> image file no matter how hard I try...<p>
+    
+    <img src="Lenna" alt="alternative 1..."/><p>
+    <img src="Lenna.png" alt="alternative 2..."/><p>
+    <img src="./Lenna.png" alt="alternative 3..."/><p>
+    <img src="static/Lenna.png" alt="alternative 4..."/><p>
+    <img src="/static/Lenna.png" alt="alternative 5..."/><p>
+    <img src="./static/Lenna.png" alt="alternative 6..."/><p>
+
+    <footer>
+        <h3>Goodbye {{title}}</h3>
+    </footer>
+</body>
+</html>
