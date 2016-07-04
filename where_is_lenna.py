@@ -26,6 +26,9 @@ def run_webserver(port=8080):
     app = web.Application()
     aiohttp_jinja2.setup(app, loader=FSLoader(os.curdir, followlinks=True))
     app.router.add_route('GET', '/', handler)
+    # Thanks, @asvetlov -- app.router.add_static() was the key!
+    # https://github.com/aio-libs/aiohttp_jinja2/issues/26
+    app.router.add_static('/static/', path='./static', name='static')
     web.run_app(app, port=port)
 
 
